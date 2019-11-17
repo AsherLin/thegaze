@@ -1,0 +1,13 @@
+// base
+@import '~bootstrap/scss/functions';
+@import './utils/variables';
+@import '~bootstrap/scss/bootstrap';
+
+::selection {
+  background: $primary;
+  color: #fff;
+}
+
+body {
+  min-width: 320px;
+}
