@@ -16,7 +16,7 @@
       <div class="row">
         <div class="col-sm-4 col-lg-2 mb-4 mb-md-0">
           <!-- 分類選單 -->
-          <div class="list-group sticky-top text-center  ">
+          <div class="list-group sticky-top text-center">
             <a
               href="#"
               class="list-group-item rounded-0 list-group-item-action"
@@ -149,5 +149,8 @@ export default {
 <style scoped lang="scss">
 .products {
   min-height: 100vh;
+}
+.sticky-top {
+  top: 60px;
 }
 </style>

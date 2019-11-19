@@ -31,7 +31,7 @@
             <img :src="require(`@/assets/img/icons/flags/${item.country.toLowerCase()}.svg`)" alt="flag" />
             {{ item.title }}
           </h4>
-          <ul class="d-flex text-gray mb-2">
+          <ul class="d-flex text-gray mb-2 list-unstyled">
             <li class="mr-2">
               <small><i class="fa fa-user" aria-hidden="true"></i> {{ item.author }}</small>
             </li>

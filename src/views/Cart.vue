@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-10">
           <h3>您的購物車</h3>
-          <ul class="d-flex justify-content-start">
+          <ul class="d-flex justify-content-start list-unstyled">
             <li class="text-primary h6">購物車</li>
             <li><i class="fa fa-angle-right mx-2" aria-hidden="true"></i></li>
             <li class="text-muted">訂單資訊</li>

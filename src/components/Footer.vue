@@ -31,7 +31,7 @@
         </div>
         <div class="col-md-2">
           <p class="font-weight-bold">服務政策</p>
-          <ul>
+          <ul class="list-unstyled">
             <li>
               <a href="#">關於我們</a>
             </li>
@@ -49,7 +49,7 @@
 
         <div class="col-md-2">
           <p class="font-weight-bold">聯絡方式</p>
-          <ul class="text-white">
+          <ul class="list-unstyled">
             <li>
               <a href="https://github.com/thegaze77">
                 <i class="fa fa-github text-center" aria-hidden="true"></i>
