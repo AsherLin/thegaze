@@ -19,11 +19,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto my-2 my-lg-0">
             <li class="nav-item">
-              <!-- 動態切換 -->
-              <router-link class="nav-link hover-underline-animation" :to="{ name: 'home' }">首頁</router-link>
+              <!-- 動態切換使用 :to="{ name:home }" --><!-- 靜態切換使用 to="/" -->
+              <router-link class="nav-link hover-underline-animation" to="/" exact>首頁</router-link>
             </li>
             <li class="nav-item">
-              <!-- 靜態切換 -->
               <router-link class="nav-link hover-underline-animation" to="/about">成員</router-link>
             </li>
             <li class="nav-item">

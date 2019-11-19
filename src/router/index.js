@@ -113,11 +113,12 @@ const routes = [
     component: Product,
   },
   {
-    path: '*',
+    path: '/404',
     // redirect: 'index', //避免用戶造訪不存在頁面
     name: 'Page404',
     component: Page404,
   },
+  { path: '*', redirect: '/404' },
 ];
 
 const router = new VueRouter({
