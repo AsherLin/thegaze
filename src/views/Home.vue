@@ -3,8 +3,8 @@
     <Navigation />
     <div class="bg-light">
       <video-bg class="video-bg" :sources="['./video.mp4']" img="assets/bg.jpg">
-        <div class="home_title text-center mx-auto">
-          <p class="pt-4 text-white h2">The Gaze 凝視</p>
+        <div class="home_title d-flex justify-content-center align-content-center flex-wrap text-center">
+          <p class="text-white h2" style="width:100%;">The Gaze 凝視</p>
           <p class="text-white h4">每天一件時事、一本書，推薦給您。</p>
         </div>
       </video-bg>
@@ -110,7 +110,7 @@ export default {
   .home_title {
     position: absolute;
     width: 100%;
-    height: 20%;
+    min-height: 20%;
     background: rgba(171, 147, 83, 0.5);
     top: 40%;
     z-index: 900;

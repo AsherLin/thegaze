@@ -103,7 +103,11 @@
                       >
                     </div>
                     <!-- 加入購物車btn -->
-                    <button class="btn btn-sm btn-outline-primary rounded-0 ml-3" @click="addtoCart(product.id, qty)">
+                    <button
+                      class="btn btn-sm btn-outline-primary rounded-0 ml-3"
+                      @click="addtoCart(product.id, qty)"
+                      :disabled="loadingItem === product.id"
+                    >
                       <i class="fa fa-spinner fa-spin fa-fw" v-if="loadingItem === product.id"></i>
                       <i class="fa fa-shopping-cart" aria-hidden="true" 　v-if="loadingItem !== product.id"></i>
                       加入購物車
@@ -150,6 +154,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import BacktopBtn from '@/components/BacktopBtn';
 import Alert from '@/components/AlertMessage';
+import { mapGetters } from 'vuex';
 
 export default {
   data() {
@@ -192,12 +197,7 @@ export default {
     },
   },
   computed: {
-    isLoading() {
-      return this.$store.state.isLoading;
-    },
-    loadingItem() {
-      return this.$store.state.loadingItem;
-    },
+    ...mapGetters(['isLoading', 'loadingItem']),
   },
   created() {
     const vm = this;

@@ -43,18 +43,19 @@
             </li>
           </ul>
         </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <img class="img-fluid mb-3" :src="require(`@/assets/img/story/${item.storyimgurl}`)" alt="story-image" />
-          </div>
-          <div class="col-md-6">
-            <p class="content mb-3">
-              {{ item.content }}
-            </p>
-            <div class="d-flex justify-content-between">
-              <a :href="item.srcurl" class="btn btn-outline-secondary rounded-0" target="_blank">原文出處</a>
-              <router-link :to="`/products/${item.recId}`" class="btn btn-primary rounded-0">推薦選書</router-link>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img class="img-fluid mb-3" :src="require(`@/assets/img/story/${item.storyimgurl}`)" alt="story-image" />
+            </div>
+            <div class="col-md-6">
+              <p class="content mb-3">
+                {{ item.content }}
+              </p>
+              <div class="d-flex justify-content-between">
+                <a :href="item.srcurl" class="btn btn-outline-secondary rounded-0" target="_blank">原文出處</a>
+                <router-link :to="`/products/${item.recId}`" class="btn btn-primary rounded-0">推薦選書</router-link>
+              </div>
             </div>
           </div>
         </div>

@@ -52,8 +52,8 @@ export default {
   position: fixed;
   z-index: 2000;
   display: inline;
-  right: 45px;
-  bottom: 45px;
+  right: 10px;
+  bottom: 10px;
   border-radius: 50%;
   height: 45px;
   width: 45px;

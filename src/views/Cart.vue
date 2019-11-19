@@ -60,7 +60,7 @@
               </td>
               <td class="align-middle text-right"><small>NT</small>{{ item.final_total | currency }}</td>
               <td class="align-middle">
-                <button type="button" class="btn btn-outline-danger btn-sm" @click="delCart(item.id)">
+                <button type="button" class="btn btn-outline-danger btn-sm" @click="delCart(item.id)" :disabled="loadingItem === item.id">
                   <i class="fa fa-spinner fa-spin fa-fw" v-if="loadingItem === item.id"></i>
                   <i class="fa fa-trash-o fa-lg" 　v-if="loadingItem !== item.id"></i>
                 </button>
@@ -108,6 +108,7 @@ import $ from 'jquery';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import Alert from '@/components/AlertMessage';
+import { mapGetters } from 'vuex';
 
 export default {
   data() {
@@ -125,6 +126,7 @@ export default {
     },
   },
   computed: {
+    ...mapGetters([ 'loadingItem']),
     cart() {
       return this.$store.state.cart;
     },

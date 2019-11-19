@@ -59,7 +59,11 @@
                   </div>
 
                   <div class="card-footer border-top-0 bg-white">
-                    <button class="btn btn-outline-primary btn-block btn-sm rounded-0" @click="addtoCart(item.id)">
+                    <button
+                      class="btn btn-outline-primary btn-block btn-sm rounded-0"
+                      @click="addtoCart(item.id)"
+                      :disabled="loadingItem === item.id"
+                    >
                       <i class="fa fa-spinner fa-spin fa-fw" v-if="loadingItem === item.id"></i>
                       <i class="fa fa-shopping-cart" aria-hidden="true" 　v-if="loadingItem !== item.id"></i>
                       加入購物車
@@ -104,7 +108,6 @@ export default {
       const vm = this;
       vm.$router.push(`/products/${id}`);
     },
-    searchBook() {},
   },
   computed: {
     ...mapGetters(['isLoading', 'loadingItem', 'allProducts', 'categories']),

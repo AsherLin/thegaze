@@ -15,9 +15,7 @@ export default {
 };
 </script>
 
-<style src="@/assets/css/base/reset.css"></style>
 <style src="@/assets/css/font-awesome.min.css"></style>
-
 <style lang="scss">
 @import '@/assets/css/all';
 </style>
