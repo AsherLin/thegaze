@@ -1,6 +1,5 @@
 <template>
   <div class="bg-light pt-6">
-    <Navigation />
     <Alert />
 
     <!-- 標題區塊 -->
@@ -22,7 +21,7 @@
       </div>
     </div>
 
-    <section class="checkout container my-3 text-center">
+    <section class="checkout container py-3 text-center">
       <div class="my-3 row justify-content-center">
         <form class="col-md-8" @submit.prevent="payOrder">
         <div class="table-responsive-lg">
@@ -94,15 +93,10 @@
 
       </div>
     </section>
-    <Footer />
-    <BacktopBtn />
   </div>
 </template>
 
 <script>
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import BacktopBtn from '@/components/BacktopBtn';
 import Alert from '@/components/AlertMessage';
 
 export default {
@@ -146,9 +140,6 @@ export default {
     vm.getOrder();
   },
   components: {
-    Navigation,
-    Footer,
-    BacktopBtn,
     Alert,
   },
 };

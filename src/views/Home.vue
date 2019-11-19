@@ -1,6 +1,5 @@
 <template>
   <div class="wrap">
-    <Navigation />
     <div class="bg-light">
       <video-bg class="video-bg" :sources="['./video.mp4']" img="assets/bg.jpg">
         <div class="home_title d-flex justify-content-center align-content-center flex-wrap text-center">
@@ -68,16 +67,11 @@
         </div>
       </div>
     </div>
-    <Footer />
-    <BacktopBtn />
   </div>
 </template>
 
 <script>
 import $ from 'jquery';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import BacktopBtn from '@/components/BacktopBtn';
 
 export default {
   methods: {
@@ -87,11 +81,6 @@ export default {
         $('html,body').animate({ scrollTop: top }, 1000);
       }
     },
-  },
-  components: {
-    Navigation,
-    Footer,
-    BacktopBtn,
   },
 };
 </script>

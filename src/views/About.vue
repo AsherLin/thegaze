@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navigation />
     <div class="row no-gutters section">
       <div class="content col-md-3" v-for="(item, index) in people" :key="index">
         <img :src="require(`@/assets/img/editor${index + 1}.jpg`)" class="content_img img-fluid" alt="" />
@@ -11,16 +10,10 @@
         </div>
       </div>
     </div>
-    <Footer />
-    <BacktopBtn />
   </div>
 </template>
 
 <script>
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import BacktopBtn from '@/components/BacktopBtn';
-
 export default {
   data() {
     return {
@@ -51,11 +44,6 @@ export default {
         },
       ],
     };
-  },
-  components: {
-    Navigation,
-    Footer,
-    BacktopBtn,
   },
 };
 </script>

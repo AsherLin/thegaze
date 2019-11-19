@@ -1,7 +1,6 @@
 <template>
   <div class="bg-light">
     <loading :active.sync="isLoading" />
-    <Navigation />
     <Alert />
     <div class="container pt-6">
       <!-- 單元介紹區塊 -->
@@ -76,18 +75,11 @@
         </div>
       </div>
     </div>
-
-    <Footer />
-    <BacktopBtn />
   </div>
 </template>
 <script>
 import $ from 'jquery'; //　引入 jQuery $
-import Pagination from '@/components/Pagination';
-import Navigation from '@/components/Navigation';
-import BacktopBtn from '@/components/BacktopBtn';
 import Alert from '@/components/AlertMessage';
-import Footer from '@/components/Footer';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
@@ -137,11 +129,7 @@ export default {
     vm.a_getAllProducts();
   },
   components: {
-    Pagination,
-    Navigation,
     Alert,
-    BacktopBtn,
-    Footer,
   },
 };
 </script>

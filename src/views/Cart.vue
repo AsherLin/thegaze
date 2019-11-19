@@ -1,7 +1,6 @@
 <template>
   <div class="bg-light pt-6">
     <loading :active.sync="isLoading" />
-    <Navigation />
     <Alert />
     <!-- 標題區塊 -->
     <div class="container">
@@ -21,9 +20,8 @@
         </div>
       </div>
     </div>
-
     <!-- 購物車無商品 -->
-    <div class="cart container text-center my-5" v-if="cart.carts.length === 0">
+    <div class="cart container text-center pb-5" v-if="cart.carts.length === 0">
       <img class="img-fluid" src="@/assets/img/chart_empty.png" alt="">
       <h5 class="text-primary pt-5">
         購物車內還沒有任何商品哦，挑本喜歡的書去吧！
@@ -35,7 +33,7 @@
       </div>
     </div>
     <!-- 購物車有商品 -->
-    <div class="cart container text-center mb-5" 　v-if="cart.carts.length !== 0">
+    <div class="cart container text-center pb-5" 　v-if="cart.carts.length !== 0">
       <div class="table-responsive-xl">
         <table class="table mt-4 table-striped border border-dark shadow-sm">
           <thead class="thead-dark border border-dark">
@@ -98,15 +96,11 @@
         </div>
       </div>
     </div>
-
-    <Footer />
   </div>
 </template>
 
 <script>
 import $ from 'jquery';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import Alert from '@/components/AlertMessage';
 import { mapGetters } from 'vuex';
 
@@ -138,8 +132,6 @@ export default {
     this.getCart();
   },
   components: {
-    Navigation,
-    Footer,
     Alert,
   },
 };

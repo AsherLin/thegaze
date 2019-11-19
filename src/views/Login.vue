@@ -1,6 +1,5 @@
 <template>
   <div class="bg-light">
-    <Navigation />
     <Alert />
     <div class="form d-flex pt-6">
       <loading :active.sync="isLoading"></loading>
@@ -51,13 +50,10 @@
       </div>
     </div>
     -->
-    <Footer />
   </div>
 </template>
 
 <script>
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import Alert from '@/components/AlertMessage';
 
 export default {
@@ -93,8 +89,6 @@ export default {
     },
   },
   components: {
-    Navigation,
-    Footer,
     Alert,
   },
 };

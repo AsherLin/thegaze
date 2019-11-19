@@ -1,7 +1,6 @@
 <template>
-  <div class="bg-light">
-    <Navigation />
-    <div class="container pt-6">
+  <div class="bg-light pt-6 pb-4">
+    <div class="container">
       <div class="row">
         <div class="col">
           <h2>今天想了解哪裡的時事呢？</h2>
@@ -27,11 +26,11 @@
     <article v-for="(item, index) in story" :key="index" class="container pt-3">
       <div class="row">
         <div class="col">
-          <h4 class="title mb-2">
+          <h4 class="title pb-2">
             <img :src="require(`@/assets/img/icons/flags/${item.country.toLowerCase()}.svg`)" alt="flag" />
             {{ item.title }}
           </h4>
-          <ul class="d-flex text-gray mb-2 list-unstyled">
+          <ul class="d-flex text-gray pb-2 list-unstyled">
             <li class="mr-2">
               <small><i class="fa fa-user" aria-hidden="true"></i> {{ item.author }}</small>
             </li>
@@ -46,10 +45,10 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <img class="img-fluid mb-3" :src="require(`@/assets/img/story/${item.storyimgurl}`)" alt="story-image" />
+              <img class="img-fluid pb-3" :src="require(`@/assets/img/story/${item.storyimgurl}`)" alt="story-image" />
             </div>
             <div class="col-md-6">
-              <p class="content mb-3">
+              <p class="content pb-3">
                 {{ item.content }}
               </p>
               <div class="d-flex justify-content-between">
@@ -63,18 +62,11 @@
 
       <hr />
     </article>
-
-    <!-- Footer -->
-    <Footer />
-    <BacktopBtn />
   </div>
 </template>
 
 <script>
 import $ from 'jquery'; //　引入 jQuery $
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import BacktopBtn from '@/components/BacktopBtn';
 
 export default {
   data() {
@@ -264,11 +256,6 @@ export default {
         },
       ],
     };
-  },
-  components: {
-    Navigation,
-    Footer,
-    BacktopBtn,
   },
 };
 </script>

@@ -1,11 +1,10 @@
 <template>
   <div class="bg-light pt-6">
     <loading :active.sync="isLoading" />
-    <Navigation />
     <!-- 標題區塊 -->
     <div class="container">
       <div class="row">
-        <div class="col-md-2 mb-3 mb-md-0">
+        <div class="col-md-2 pb-3 pb-md-0">
           <img class="img-fluid" src="@/assets/img/step_2.png" alt="">
         </div>
         <div class="col-md-10">
@@ -21,7 +20,7 @@
       </div>
     </div>
     
-    <div class="order container mt-2 mb-5">
+    <div class="order container pt-2 pb-5">
       <div class="row">
         <!-- 購物清單 -->
         <div class="col-md-12 col-lg-5">
@@ -161,20 +160,13 @@
             </div>
           </form>
         </div>
-
       </div>
     </div>
-
-    <Footer />
-    <BacktopBtn />
   </div>
 </template>
 
 <script>
 import $ from 'jquery';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import BacktopBtn from '@/components/BacktopBtn';
 
 export default {
   data() {
@@ -243,11 +235,6 @@ export default {
   created() {
     const vm = this;
     vm.getCart();
-  },
-  components: {
-    Navigation,
-    Footer,
-    BacktopBtn,
   },
 };
 </script>

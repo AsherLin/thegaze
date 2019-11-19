@@ -1,7 +1,6 @@
 <template>
   <div class="pt-6 bg-light">
     <loading :active.sync="isLoading" />
-    <Navigation />
     <Alert />
 
     <div class="product">
@@ -142,17 +141,11 @@
         </div>
       </section>
     </div>
-
-    <Footer />
-    <BacktopBtn />
   </div>
 </template>
 
 <script>
 import $ from 'jquery';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import BacktopBtn from '@/components/BacktopBtn';
 import Alert from '@/components/AlertMessage';
 import { mapGetters } from 'vuex';
 
@@ -204,9 +197,6 @@ export default {
     vm.getProduct();
   },
   components: {
-    Navigation,
-    Footer,
-    BacktopBtn,
     Alert,
   },
 };
