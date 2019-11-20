@@ -60,7 +60,7 @@ export default {
     bottom: 18%;
     right: 0;
     background: rgba(0, 0, 0, 0.85);
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s;
   }
   &:hover .content_text {
@@ -69,11 +69,21 @@ export default {
   .content_img {
     object-fit: cover;
     height: 100vh;
-    filter: brightness(0.5);
+    filter: brightness(1);
     transition: filter 0.3s;
   }
   &:hover .content_img {
     filter: brightness(1);
+  }
+}
+@media screen and (min-width: 768px) {
+  .content {
+    .content_text {
+      opacity: 0;
+    }
+    .content_img {
+      filter: brightness(0.5);
+    }
   }
 }
 </style>
