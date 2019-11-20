@@ -1,4 +1,5 @@
 import Vue from 'vue';
+
 Vue.prototype.$bus = new Vue();
 // 讓 EventBus 掛載在 Vue 原型下，使其可以直接呼叫
 

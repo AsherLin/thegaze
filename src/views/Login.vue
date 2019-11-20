@@ -4,7 +4,7 @@
     <div class="form d-flex pt-6">
       <loading :active.sync="isLoading"></loading>
       <form class="form-signin text-center" @submit.prevent="signin">
-        <img class="mb-4 img-fluid" src="@/assets/img/login.png" alt="" />
+        <img class="mb-4 img-fluid" src="@/assets/img/login.png" alt />
         <h3 class="h3 mb-3 text-primary font-weight-normal">會員登入</h3>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input
@@ -26,7 +26,9 @@
           required
         />
         <div class="checkbox mb-3 text-primary">
-          <label> <input type="checkbox" value="remember-me" /> 記住我 </label>
+          <label>
+            <input type="checkbox" value="remember-me" /> 記住我
+          </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登入</button>
       </form>

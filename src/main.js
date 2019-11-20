@@ -12,7 +12,7 @@ import 'vue-loading-overlay/dist/vue-loading.css';
 import VideoBg from 'vue-videobg';
 // vee-validate
 import VeeValidate from 'vee-validate';
-import zhTW_Validate from 'vee-validate/dist/locale/zh_TW';
+import zhTWValidate from 'vee-validate/dist/locale/zh_TW';
 
 import 'bootstrap';
 
@@ -37,7 +37,7 @@ Vue.config.productionTip = false;
 Vue.use(VueAxios, axios);
 Vue.use(VeeValidate);
 Vue.use(Vuex);
-VeeValidate.Validator.localize('zh_TW', zhTW_Validate);
+VeeValidate.Validator.localize('zh_TW', zhTWValidate);
 
 Vue.component('Loading', Loading);
 Vue.component('video-bg', VideoBg);
@@ -49,5 +49,5 @@ axios.defaults.withCredentials = true; // 設定跨域，使用 Cookies 方式�
 new Vue({
   router,
   store,
-  render: h => h(App),
+  render: (h) => h(App),
 }).$mount('#app');

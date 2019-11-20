@@ -18,7 +18,7 @@ export default {
       var startTime = +new Date();
       //取得所在高度
       var b = document.body.scrollTop || document.documentElement.scrollTop;
-      var d = 500;
+      var d = 300;
       var c = b;
       timer = requestAnimationFrame(function func() {
         var t = d - Math.max(0, startTime - +new Date() + d);
@@ -51,7 +51,6 @@ export default {
 .backtop {
   position: fixed;
   z-index: 2000;
-  display: inline;
   right: 10px;
   bottom: 10px;
   border-radius: 50%;

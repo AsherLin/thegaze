@@ -13,10 +13,12 @@
           <th>編輯</th>
         </tr>
       </thead>
-      <tbody>
-        <tr v-for="(item, key) in orders" :key="key" v-if="orders.length" :class="{ 'text-secondary': !item.is_paid }">
+      <tbody v-if="orders.length">
+        <tr v-for="(item, key) in orders" :key="key" :class="{ 'text-danger': !item.is_paid }">
           <td>{{ item.create_at | date }}</td>
-          <td><span v-text="item.user.email" v-if="item.user"></span></td>
+          <td>
+            <span v-text="item.user.email" v-if="item.user"></span>
+          </td>
           <td>
             <ul class="list-unstyled">
               <li v-for="(product, i) in item.products" :key="i">
@@ -28,8 +30,12 @@
           <td>{{ item.id }}</td>
           <td class="text-right">{{ item.total | currency }}</td>
           <td class="text-center">
-            <strong v-if="item.is_paid" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></strong>
-            <span v-else class="text-danger"><i class="fa fa-times" aria-hidden="true"></i></span>
+            <strong v-if="item.is_paid" class="text-success">
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </strong>
+            <span v-else class="text-danger">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </span>
           </td>
           <td>
             <button class="btn btn-sm btn-outline-secondary" @click="openModal(item)">編輯</button>
@@ -66,21 +72,43 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="order_id">訂單編號</label>
-                  <input type="text" class="form-control" id="order_id" v-model="tempOrder.id" disabled />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="order_id"
+                    v-model="tempOrder.id"
+                    disabled
+                  />
                 </div>
                 <div class="form-group">
                   <label for="create_at">建立日期</label>
-                  <input type="text" class="form-control" id="create_at" v-model="tempOrder.create_at" disabled />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="create_at"
+                    v-model="tempOrder.create_at"
+                    disabled
+                  />
                 </div>
                 <div class="form-group">
                   <label for="create_at">付款日期</label>
-                  <input type="text" class="form-control" id="create_at" v-model="tempOrder.paid_date" disabled />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="create_at"
+                    v-model="tempOrder.paid_date"
+                    disabled
+                  />
                 </div>
                 <div class="form-group form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="is_paid" v-model="tempOrder.is_paid" />
-                  <label class="form-check-label" for="is_paid">
-                    是否付款
-                  </label>
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value
+                    id="is_paid"
+                    v-model="tempOrder.is_paid"
+                  />
+                  <label class="form-check-label" for="is_paid">是否付款</label>
                 </div>
               </div>
               <div class="col-md-8">

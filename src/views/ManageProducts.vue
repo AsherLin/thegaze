@@ -20,27 +20,25 @@
       </thead>
       <tbody>
         <tr v-for="item in products" :key="item.id">
-          <td><img :src="item.imageUrl" width="50" alt="" /></td>
+          <td>
+            <img :src="item.imageUrl" width="50" alt />
+          </td>
           <td>{{ item.category }}</td>
           <td>{{ item.title }}</td>
           <td class="text-right">{{ item.origin_price | currency }}</td>
           <td class="text-right">{{ item.price | currency }}</td>
           <td>
-            <span class="text-success" v-if="item.is_enabled"
-              ><i class="fa fa-check" aria-hidden="true"></i> 已啟用</span
-            >
-            <span class="text-danger" v-if="!item.is_enabled"
-              ><i class="fa fa-times" aria-hidden="true"></i> 未啟用</span
-            >
+            <span class="text-success" v-if="item.is_enabled">
+              <i class="fa fa-check" aria-hidden="true"></i> 已啟用
+            </span>
+            <span class="text-danger" v-if="!item.is_enabled">
+              <i class="fa fa-times" aria-hidden="true"></i> 未啟用
+            </span>
           </td>
           <td>
             <div class="btn-group" role="group">
-              <button class="btn btn-outline-dark btn-sm" @click="openModal(false, item)">
-                編輯
-              </button>
-              <button class="btn btn-outline-danger btn-sm" @click="openModal(false, item, true)">
-                刪除
-              </button>
+              <button class="btn btn-outline-dark btn-sm" @click="openModal(false, item)">編輯</button>
+              <button class="btn btn-outline-danger btn-sm" @click="openModal(false, item, true)">刪除</button>
             </div>
           </td>
         </tr>
@@ -82,13 +80,19 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="customFile"
-                    >或 上傳圖片
+                  <label for="customFile">
+                    或 上傳圖片
                     <i class="fa fa-spinner fa-spin fa-fw" v-if="status.fileUploading"></i>
                   </label>
-                  <input type="file" id="customFile" class="form-control" ref="files" @change="uploadFile" />
+                  <input
+                    type="file"
+                    id="customFile"
+                    class="form-control"
+                    ref="files"
+                    @change="uploadFile"
+                  />
                 </div>
-                <img img="" class="img-fluid" :src="tempProduct.imageUrl" alt="" />
+                <img img class="img-fluid" :src="tempProduct.imageUrl" alt />
               </div>
               <div class="col-sm-8">
                 <div class="form-group">
@@ -178,9 +182,7 @@
                       :false-value="0"
                       id="is_enabled"
                     />
-                    <label class="form-check-label" for="is_enabled">
-                      是否啟用
-                    </label>
+                    <label class="form-check-label" for="is_enabled">是否啟用</label>
                   </div>
                 </div>
               </div>
@@ -214,7 +216,8 @@
             </button>
           </div>
           <div class="modal-body">
-            是否刪除 <strong class="text-danger">{{ tempProduct.title }}</strong> 商品(刪除後將無法恢復)。
+            是否刪除
+            <strong class="text-danger">{{ tempProduct.title }}</strong> 商品(刪除後將無法恢復)。
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">取消</button>
@@ -229,7 +232,7 @@
 </template>
 
 <script>
-import $ from 'jquery'; //　引入 jQuery $
+import $ from 'jquery'; // 引入 jQuery $
 import Pagination from '@/components/Pagination';
 
 export default {

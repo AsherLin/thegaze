@@ -8,7 +8,7 @@
     </div>
 
     <table class="table mt-4 table-hover shadow-sm rounded bg-light">
-      <thead class="thead-dark ">
+      <thead class="thead-dark">
         <tr>
           <th class="pl-4">名稱</th>
           <th>折扣百分比</th>
@@ -23,15 +23,20 @@
           <td>{{ item.percent }}%</td>
           <td>{{ item.due_date | date }}</td>
           <td>
-            <span v-if="item.is_enabled === 1" class="text-success"
-              ><i class="fa fa-check" aria-hidden="true"></i> 已啟用</span
-            >
-            <span v-else class="text-muted"><i class="fa fa-times" aria-hidden="true"></i> 未啟用</span>
+            <span v-if="item.is_enabled === 1" class="text-success">
+              <i class="fa fa-check" aria-hidden="true"></i> 已啟用
+            </span>
+            <span v-else class="text-muted">
+              <i class="fa fa-times" aria-hidden="true"></i> 未啟用
+            </span>
           </td>
           <td>
             <div class="btn-group">
               <button class="btn btn-outline-dark btn-sm" @click="openCouponModal(false, item)">編輯</button>
-              <button class="btn btn-outline-danger btn-sm" @click="openCouponModal(false, item, true)">刪除</button>
+              <button
+                class="btn btn-outline-danger btn-sm"
+                @click="openCouponModal(false, item, true)"
+              >刪除</button>
             </div>
           </td>
         </tr>
@@ -103,9 +108,7 @@
                   v-model="tempCoupon.is_enabled"
                   id="is_enabled"
                 />
-                <label class="form-check-label" for="is_enabled">
-                  是否啟用
-                </label>
+                <label class="form-check-label" for="is_enabled">是否啟用</label>
               </div>
             </div>
           </div>
@@ -137,7 +140,8 @@
             </button>
           </div>
           <div class="modal-body">
-            是否刪除 <strong class="text-danger">{{ tempCoupon.title }}</strong> 優惠券(刪除後將無法恢復)。
+            是否刪除
+            <strong class="text-danger">{{ tempCoupon.title }}</strong> 優惠券(刪除後將無法恢復)。
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">取消</button>

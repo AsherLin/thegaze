@@ -6,7 +6,10 @@
       v-for="(item, i) in messages"
       :key="i"
     >
-      <strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ item.message }}</strong>
+      <strong>
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        {{ item.message }}
+      </strong>
       <button type="button" class="close" @click="removeMessage(i)" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>

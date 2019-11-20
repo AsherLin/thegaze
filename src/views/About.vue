@@ -2,7 +2,11 @@
   <div>
     <div class="row no-gutters section">
       <div class="content col-md-3" v-for="(item, index) in people" :key="index">
-        <img :src="require(`@/assets/img/editor${index + 1}.jpg`)" class="content_img img-fluid" alt="" />
+        <img
+          :src="require(`@/assets/img/editor${index + 1}.jpg`)"
+          class="content_img img-fluid"
+          alt
+        />
         <div class="content_text p-3 text-white">
           <p class="h3">{{ item.name }}</p>
           <p class="h6 text-primary">{{ item.job }}</p>

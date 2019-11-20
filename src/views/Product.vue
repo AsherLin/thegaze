@@ -1,7 +1,6 @@
 <template>
   <div class="pt-6 bg-light">
     <loading :active.sync="isLoading" />
-    <Alert />
 
     <div class="product">
       <!-- 商品標題區塊 -->
@@ -24,9 +23,13 @@
             </div>
             <!-- BackPrePage -->
             <div class="col-md-4 mt-3 mt-md-0">
-              <a href="#" class="btn btn-sm btn-outline-secondary rounded-0" @click.prevent="toPrePage">
-                <i class="fa fa-long-arrow-left" aria-hidden="true"></i> 回上頁</a
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-secondary rounded-0"
+                @click.prevent="toPrePage"
               >
+                <i class="fa fa-long-arrow-left" aria-hidden="true"></i> 回上頁
+              </a>
             </div>
           </div>
         </div>
@@ -34,7 +37,7 @@
 
       <!-- 商品內容區塊 -->
       <section>
-        <div class="container mb-5">
+        <div class="container pb-5">
           <div class="row">
             <div class="col-md-5 mt-5 mt-md-4">
               <div class="row">
@@ -42,7 +45,7 @@
                   <div class="d-flex justify-content-center">
                     <!-- 商品圖片 -->
                     <div class="img">
-                      <img :src="`${product.imageUrl}`" alt="" class="img-fluid rounded-sm shadow-sm" />
+                      <img :src="`${product.imageUrl}`" alt class="img-fluid rounded-sm shadow-sm" />
                     </div>
                     <!-- 商品照片背景 -->
                     <div class="box"></div>
@@ -61,11 +64,18 @@
                   <div class="mt-4">
                     <ul class="pr-5">
                       <li class="text-muted">
-                        <strong>定價：</strong><del><small>NT</small>{{ product.origin_price | currency }} </del>
+                        <strong>定價：</strong>
+                        <del>
+                          <small>NT</small>
+                          {{ product.origin_price | currency }}
+                        </del>
                       </li>
                       <li>
-                        <strong>特價：</strong
-                        ><span class="text-danger h4"><small>NT</small>{{ product.price | currency }}</span>
+                        <strong>特價：</strong>
+                        <span class="text-danger h4">
+                          <small>NT</small>
+                          {{ product.price | currency }}
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -85,11 +95,16 @@
                         :class="{ disabled: qty === 1 }"
                         id="button-addon1"
                         @click.prevent="qty = qty - 1"
-                        >−</a
-                      >
+                      >−</a>
                     </div>
                     <!-- 購買數量欄 -->
-                    <input type="number" min="1" max="20" class="form-control text-center" v-model.number="qty" />
+                    <input
+                      type="number"
+                      min="1"
+                      max="20"
+                      class="form-control text-center"
+                      v-model.number="qty"
+                    />
                     <!-- 加1btn -->
                     <div class="input-group-append">
                       <a
@@ -98,8 +113,7 @@
                         :class="{ disabled: qty === 20 }"
                         id="button-addon2"
                         @click.prevent="qty = qty + 1"
-                        >+</a
-                      >
+                      >+</a>
                     </div>
                     <!-- 加入購物車btn -->
                     <button
@@ -108,7 +122,11 @@
                       :disabled="loadingItem === product.id"
                     >
                       <i class="fa fa-spinner fa-spin fa-fw" v-if="loadingItem === product.id"></i>
-                      <i class="fa fa-shopping-cart" aria-hidden="true" 　v-if="loadingItem !== product.id"></i>
+                      <i
+                        class="fa fa-shopping-cart"
+                        aria-hidden="true"
+                        v-if="loadingItem !== product.id"
+                      ></i>
                       加入購物車
                     </button>
                   </div>
@@ -119,9 +137,7 @@
                     <h4>商品描述</h4>
                   </div>
                   <div class="description mt-4">
-                    <p>
-                      {{ product.content }}
-                    </p>
+                    <p>{{ product.content }}</p>
                   </div>
                 </div>
                 <!-- 商品規格 -->
@@ -146,7 +162,6 @@
 
 <script>
 import $ from 'jquery';
-import Alert from '@/components/AlertMessage';
 import { mapGetters } from 'vuex';
 
 export default {
@@ -195,9 +210,6 @@ export default {
   created() {
     const vm = this;
     vm.getProduct();
-  },
-  components: {
-    Alert,
   },
 };
 </script>

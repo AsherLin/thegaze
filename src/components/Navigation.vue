@@ -2,8 +2,8 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-2" id="mainNav">
       <div class="container">
-        <router-link class="text-white navbar-brand px-3" :to="{ name: 'home' }"
-          ><img src="@/assets/img/logo/text-white.png" height="25px" alt="" />
+        <router-link class="text-white navbar-brand px-3" :to="{ name: 'home' }">
+          <img src="@/assets/img/logo/text-white.png" height="25px" alt />
         </router-link>
         <button
           class="navbar-toggler navbar-toggler-right"
@@ -19,7 +19,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto my-2 my-lg-0">
             <li class="nav-item">
-              <!-- 動態切換使用 :to="{ name:home }" --><!-- 靜態切換使用 to="/" -->
+              <!-- 動態切換使用 :to="{ name:home }" -->
+              <!-- 靜態切換使用 to="/" -->
               <router-link class="nav-link hover-underline-animation" to="/" exact>首頁</router-link>
             </li>
             <li class="nav-item">
@@ -33,7 +34,7 @@
             </li>
             <li class="nav-item">
               <router-link class="nav-link text-white" to="/cart">
-                <span>{{ cart.carts.length }} </span>
+                <span>{{ cart.carts.length }}</span>
                 <i class="fa fa-book" aria-hidden="true"></i>
               </router-link>
             </li>

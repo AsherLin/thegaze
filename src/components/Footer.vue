@@ -4,29 +4,47 @@
       <div class="row">
         <div class="col-md-5 mb-2">
           <p class="font-weight-bold h2">
-            <img src="@/assets/img/logo/text-white.png" height="30px" alt="" />
+            <img src="@/assets/img/logo/text-white.png" height="30px" alt />
           </p>
           <!-- <p>Copyright &copy; 2019, The Gaze.</p> -->
           <p class="danger">
-            <small
-              >本站資料、圖片來源皆取自網路，僅做為<br />個人學習用途，如有侵權請<a
-                href="mailto:thegaze77@gmail.com"
-                style="color:white;"
-                >來信</a
-              >告知。</small
-            >
+            <small>
+              本站資料、圖片來源皆取自網路，僅做為
+              <br />個人學習用途，如有侵權請
+              <a href="mailto:thegaze77@gmail.com" style="color:white;">來信</a>告知。
+            </small>
           </p>
           <div class="d-flex">
-            <img class="payment_icon" src="@/assets/img/icons/payments/amazon.svg" alt="Amazon" title="Amazon" />
+            <img
+              class="payment_icon"
+              src="@/assets/img/icons/payments/amazon.svg"
+              alt="Amazon"
+              title="Amazon"
+            />
             <img
               class="payment_icon"
               src="@/assets/img/icons/payments/american-express.svg"
               alt="American Express"
               title="American Express"
             />
-            <img class="payment_icon" src="@/assets/img/icons/payments/jcb.svg" alt="JCB" title="JCB" />
-            <img class="payment_icon" src="@/assets/img/icons/payments/paypal.svg" alt="Paypal" title="Paypal" />
-            <img class="payment_icon" src="@/assets/img/icons/payments/visa.svg" alt="Visa" title="Visa" />
+            <img
+              class="payment_icon"
+              src="@/assets/img/icons/payments/jcb.svg"
+              alt="JCB"
+              title="JCB"
+            />
+            <img
+              class="payment_icon"
+              src="@/assets/img/icons/payments/paypal.svg"
+              alt="Paypal"
+              title="Paypal"
+            />
+            <img
+              class="payment_icon"
+              src="@/assets/img/icons/payments/visa.svg"
+              alt="Visa"
+              title="Visa"
+            />
           </div>
         </div>
         <div class="col-md-2">

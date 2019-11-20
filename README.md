@@ -45,6 +45,7 @@ npm run build
 - jQuery
 - JavaScript(ES6)
 - SCSS
+- ESLint(Airbnb)
 
 ## 使用 Plugins
 

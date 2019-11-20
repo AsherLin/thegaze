@@ -5,56 +5,61 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2 pb-3 pb-md-0">
-          <img class="img-fluid" src="@/assets/img/step_2.png" alt="">
+          <img class="img-fluid" src="@/assets/img/step_2.png" alt />
         </div>
         <div class="col-md-10">
           <h3>您的訂單</h3>
           <ul class="d-flex justify-content-start list-unstyled">
             <li class="font-weight-bold">購物車</li>
-            <li><i class="fa fa-angle-right mx-2" aria-hidden="true"></i></li>
+            <li>
+              <i class="fa fa-angle-right mx-2" aria-hidden="true"></i>
+            </li>
             <li class="text-primary h6">訂單資訊</li>
-            <li><i class="fa fa-angle-right mx-2" aria-hidden="true"></i></li>
+            <li>
+              <i class="fa fa-angle-right mx-2" aria-hidden="true"></i>
+            </li>
             <li class="text-muted">確認付款</li>
           </ul>
         </div>
       </div>
     </div>
-    
+
     <div class="order container pt-2 pb-5">
       <div class="row">
         <!-- 購物清單 -->
         <div class="col-md-12 col-lg-5">
           <table class="table mt-2 shadow-sm border border-dark table-striped">
-            <thead　class="thead-dark">
+            <thead class="thead-dark">
               <th scope="col" class="text-center" width="60px">編號</th>
               <th class="text-center">選書</th>
               <th width="30px" class="text-right">小計</th>
             </thead>
             <tbody>
               <tr v-for="(item,index) in cart.carts" :key="index">
-              <th scope="row" class="text-center align-middle">{{index + 1}}</th>
+                <th scope="row" class="text-center align-middle">{{index + 1}}</th>
                 <td>
-                  《{{ item.product.title }}》× {{ item.qty }}　本
-                  <div class="text-secondary" v-if="item.coupon">
-                    已套用優惠券
-                  </div>
+                  《{{ item.product.title }}》× {{ item.qty }} 本
+                  <div class="text-secondary" v-if="item.coupon">已套用優惠券</div>
                 </td>
                 <td class="align-middle text-right">
-                  <small>NT</small>{{ item.final_total | currency }}
+                  <small>NT</small>
+                  {{ item.final_total | currency }}
                 </td>
               </tr>
             </tbody>
             <tfoot class="table-dark">
-              <tr> 
+              <tr>
                 <td colspan="2" class="text-right">總計：</td>
-                <td class="text-right"　v-if="cart.final_total === cart.total">
+                <td class="text-right" v-if="cart.final_total === cart.total">
                   <strong class="h5">
-                    <small>NT</small>{{ cart.total | currency }}
+                    <small>NT</small>
+                    {{ cart.total | currency }}
                   </strong>
                 </td>
-                <td class="text-right"　v-if="cart.final_total !== cart.total">
+                <td class="text-right" v-if="cart.final_total !== cart.total">
                   <s class="h5">
-                    <small>NT</small>{{ cart.total | currency }}
+                    <small>NT</small>
+                    {{ cart.total | currency }}
                   </s>
                 </td>
               </tr>
@@ -63,24 +68,33 @@
                 <td colspan="2" class="text-right text-secondary">折扣後總價：</td>
                 <td class="text-right text-secondary">
                   <strong class="h5">
-                    <small>NT</small>{{ cart.final_total | currency }}
+                    <small>NT</small>
+                    {{ cart.final_total | currency }}
                   </strong>
                 </td>
               </tr>
             </tfoot>
           </table>
           <div class="input-group">
-            <input type="text" class="form-control form-control-sm rounded-0" placeholder="現在輸入優惠碼 1111 立即享折扣！" v-model="coupon_code" />
+            <input
+              type="text"
+              class="form-control form-control-sm rounded-0"
+              placeholder="現在輸入優惠碼 1111 立即享折扣！"
+              v-model="coupon_code"
+            />
             <div class="input-group-append">
-              <button class="btn btn-sm btn-primary rounded-0" @click="addCouponCode" type="button">
-                套用
-              </button>
+              <button
+                class="btn btn-sm btn-primary rounded-0"
+                @click="addCouponCode"
+                type="button"
+              >套用</button>
             </div>
           </div>
 
           <div class="text-right my-3">
-            <router-link　class="btn btn-outline-dark rounded-0 btn-sm" to="/cart"><i class="fa fa-long-arrow-left" aria-hidden="true"></i
-                > 回購物車</router-link>
+            <router-link class="btn btn-outline-dark rounded-0 btn-sm" to="/cart">
+              <i class="fa fa-long-arrow-left" aria-hidden="true"></i> 回購物車
+            </router-link>
           </div>
         </div>
         <!--收件人資訊欄位 -->
@@ -152,10 +166,19 @@
             <!-- 留言 -->
             <div class="form-group">
               <label for="comment">留言</label>
-              <textarea name="" id="comment" class="form-control" cols="10" rows="5" v-model="form.message"></textarea>
+              <textarea
+                name
+                id="comment"
+                class="form-control"
+                cols="10"
+                rows="5"
+                v-model="form.message"
+              ></textarea>
             </div>
             <div class="text-right">
-              <button class="btn btn-primary rounded-0">送出訂單 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              <button class="btn btn-primary rounded-0">
+                送出訂單
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
               </button>
             </div>
           </form>
@@ -240,7 +263,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .order{
-    min-height: 60vh;
-  }
+.order {
+  min-height: 60vh;
+}
 </style>

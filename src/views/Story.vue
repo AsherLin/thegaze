@@ -27,32 +27,45 @@
       <div class="row">
         <div class="col">
           <h4 class="title pb-2">
-            <img :src="require(`@/assets/img/icons/flags/${item.country.toLowerCase()}.svg`)" alt="flag" />
+            <img
+              :src="require(`@/assets/img/icons/flags/${item.country.toLowerCase()}.svg`)"
+              alt="flag"
+            />
             {{ item.title }}
           </h4>
           <ul class="d-flex text-gray pb-2 list-unstyled">
             <li class="mr-2">
-              <small><i class="fa fa-user" aria-hidden="true"></i> {{ item.author }}</small>
+              <small>
+                <i class="fa fa-user" aria-hidden="true"></i>
+                {{ item.author }}
+              </small>
             </li>
             <li class="mr-2">
-              <small
-                ><i class="fa fa-calendar" aria-hidden="true"></i> {{ item.month }} {{ item.date }},
-                {{ item.year }}</small
-              >
+              <small>
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                {{ item.month }} {{ item.date }},
+                {{ item.year }}
+              </small>
             </li>
           </ul>
         </div>
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <img class="img-fluid pb-3" :src="require(`@/assets/img/story/${item.storyimgurl}`)" alt="story-image" />
+              <img
+                class="img-fluid pb-3"
+                :src="require(`@/assets/img/story/${item.storyimgurl}`)"
+                alt="story-image"
+              />
             </div>
             <div class="col-md-6">
-              <p class="content pb-3">
-                {{ item.content }}
-              </p>
+              <p class="content pb-3">{{ item.content }}</p>
               <div class="d-flex justify-content-between">
-                <a :href="item.srcurl" class="btn btn-outline-secondary rounded-0" target="_blank">原文出處</a>
+                <a
+                  :href="item.srcurl"
+                  class="btn btn-outline-secondary rounded-0"
+                  target="_blank"
+                >原文出處</a>
                 <router-link :to="`/products/${item.recId}`" class="btn btn-primary rounded-0">推薦選書</router-link>
               </div>
             </div>
@@ -66,7 +79,7 @@
 </template>
 
 <script>
-import $ from 'jquery'; //　引入 jQuery $
+import $ from 'jquery'; // 引入 jQuery $
 
 export default {
   data() {

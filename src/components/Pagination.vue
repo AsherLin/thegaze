@@ -3,8 +3,15 @@
     <nav aria-label="navigation ">
       <ul class="pagination justify-content-center">
         <li class="page-item" :class="{ disabled: !pagination.has_pre }">
-          <a class="page-link" href="#" aria-label="Previous" @click="goPage(pagination.current_page - 1)">
-            <span aria-hidden="true"> <i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+          <a
+            class="page-link"
+            href="#"
+            aria-label="Previous"
+            @click="goPage(pagination.current_page - 1)"
+          >
+            <span aria-hidden="true">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </span>
           </a>
         </li>
 
@@ -18,7 +25,12 @@
           <a class="page-link" href="#">{{ page }}</a>
         </li>
         <li class="page-item" :class="{ disabled: !pagination.has_next }">
-          <a class="page-link" href="#" aria-label="Next" @click="goPage(pagination.current_page + 1)">
+          <a
+            class="page-link"
+            href="#"
+            aria-label="Next"
+            @click="goPage(pagination.current_page + 1)"
+          >
             <span aria-hidden="true">
               <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </span>
