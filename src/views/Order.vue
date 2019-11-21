@@ -190,6 +190,7 @@
 
 <script>
 import $ from 'jquery';
+import { mapActions } from 'vuex';
 
 export default {
   data() {
@@ -207,6 +208,8 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['a_updateMessage']),
+
     createOrder() {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/order`;
@@ -221,7 +224,7 @@ export default {
           });
         } else {
           // console.log(response.data);
-          vm.$bus.$emit('message:push', '欄位不完整', 'danger');
+          this.$store.dispatch('a_updateMessage', { message: '欄位不完整', status: 'danger' });
         }
       });
     },
@@ -237,9 +240,9 @@ export default {
       vm.$store.dispatch('a_updateLoading', true);
       this.$http.post(api, { data: coupon }).then(response => {
         if (response.data.success) {
-          vm.$bus.$emit('message:push', '已套用優惠券', 'success');
+          this.$store.dispatch('a_updateMessage', { message: '已套用優惠券', status: 'primary' });
         } else {
-          vm.$bus.$emit('message:push', '優惠券無效', 'danger');
+          this.$store.dispatch('a_updateMessage', { message: '優惠券無效', status: 'danger' });
         }
         // console.log(response.data);
         vm.getCart(); // 更新購物車列表

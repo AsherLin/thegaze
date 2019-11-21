@@ -46,8 +46,6 @@
     <!-- pagination -->
     <Pagination :pagination="pagination" @gopage="getOrders"></Pagination>
 
-    <BacktopBtn />
-
     <!-- Order Modal -->
     <div
       class="modal fade"
@@ -188,8 +186,7 @@
 <script>
 import $ from 'jquery';
 import Pagination from '@/components/Pagination';
-import BacktopBtn from '@/components/BacktopBtn';
-import Alert from '@/components/AlertMessage';
+import { mapActions } from 'vuex';
 
 export default {
   data() {
@@ -205,6 +202,8 @@ export default {
   },
 
   methods: {
+    ...mapActions(['a_updateMessage']),
+
     openModal(item) {
       this.tempOrder = Object.assign({}, item); // 將item 值寫到空物件，並避免與 tempOrder 有參考特性。
       $('#orderModal').modal('show');
@@ -230,11 +229,11 @@ export default {
         // console.log(response.data);
         vm.isLoading = false;
         if (response.data.success) {
-          vm.$bus.$emit('message:push', '已更新訂單', 'success');
+          this.$store.dispatch('a_updateMessage', { message: '已更新訂單', status: 'primary' });
           $('#orderModal').modal('hide');
           vm.getOrders();
         } else {
-          vm.$bus.$emit('message:push', '找不到訂單', 'danger');
+          this.$store.dispatch('a_updateMessage', { message: '找不到訂單', status: 'danger' });
         }
       });
     },
@@ -245,8 +244,6 @@ export default {
   },
   components: {
     Pagination,
-    BacktopBtn,
-    Alert,
   },
 };
 </script>

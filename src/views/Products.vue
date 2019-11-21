@@ -100,7 +100,6 @@ export default {
 
     addtoCart(id, qty = 1) {
       this.$store.dispatch('a_addtoCart', { id, qty });
-      this.$bus.$emit('message:push', '已加入購物車', 'secondary');
     },
     toProductPage(id) {
       const vm = this;

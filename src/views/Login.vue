@@ -1,6 +1,5 @@
 <template>
   <div class="bg-light">
-    <Alert />
     <div class="form d-flex pt-6">
       <loading :active.sync="isLoading"></loading>
       <form class="form-signin text-center" @submit.prevent="signin">
@@ -56,7 +55,7 @@
 </template>
 
 <script>
-import Alert from '@/components/AlertMessage';
+import { mapActions } from 'vuex';
 
 export default {
   data() {
@@ -70,17 +69,19 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['a_updateAction']),
+
     signin() {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/admin/signin`;
       vm.isLoading = true;
       this.$http.post(api, vm.user).then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         if (response.data.success) {
           vm.$router.push('/admin/manage_products');
-          vm.$bus.$emit('message:push', '登入成功', 'primary');
+          this.$store.dispatch('a_updateMessage', { message: '登入成功', status: 'primary' });
         } else {
-          vm.$bus.$emit('message:push', '登入失敗', 'danger');
+          this.$store.dispatch('a_updateMessage', { message: '登入失敗', status: 'danger' });
         }
         vm.isLoading = false;
       });
@@ -89,9 +90,6 @@ export default {
       const id = this.orderId;
       this.$router.push(`/checkout/${id}`);
     },
-  },
-  components: {
-    Alert,
   },
 };
 </script>

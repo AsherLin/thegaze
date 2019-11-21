@@ -234,6 +234,7 @@
 <script>
 import $ from 'jquery'; // 引入 jQuery $
 import Pagination from '@/components/Pagination';
+import { mapActions } from 'vuex';
 
 export default {
   data() {
@@ -250,6 +251,8 @@ export default {
   },
 
   methods: {
+    ...mapActions(['a_updateMessage']),
+
     // 取得產品列表
     getProducts(page = 1) {
       // 使用 ES6 預設參數語法，如果沒有帶數值就帶入 1
@@ -294,9 +297,9 @@ export default {
         if (response.data.success) {
           $('#productModal').modal('hide'); // 關閉模版
           vm.getProducts(); // 更新產品列表
-          vm.$bus.$emit('message:push', '已更新產品', 'success'); // 使用emit傳出顯示訊息至外層
+          this.$store.dispatch('a_updateMessage', { message: '已更新產品', status: 'primary' });
         } else {
-          vm.$bus.$emit('message:push', '新增失敗', 'danger');
+          this.$store.dispatch('a_updateMessage', { message: '更新失敗', status: 'danger' });
           $('#productModal').modal('hide');
           console.log('更新失敗');
         }
@@ -314,7 +317,7 @@ export default {
         vm.isLoading = false;
         $('#delProductModal').modal('hide');
         vm.getProducts(); // 更新產品列表
-        vm.$bus.$emit('message:push', '刪除成功', 'danger');
+        this.$store.dispatch('a_updateMessage', { message: '刪除成功', status: 'primary' });
       });
     },
 
@@ -341,9 +344,9 @@ export default {
             // 因為 imageUrl 沒有包含 getter 和 setter
             vm.$set(vm.tempProduct, 'imageUrl', response.data.imageUrl);
             // 使用 set() 方式強制寫入
-            vm.$bus.$emit('message:push', '上傳成功', 'success');
+            this.$store.dispatch('a_updateMessage', { message: '上傳成功', status: 'primary' });
           } else {
-            vm.$bus.$emit('message:push', response.data.message, 'danger');
+            this.$store.dispatch('a_updateMessage', { message: response.data.message, status: 'danger' });
           }
         });
     },

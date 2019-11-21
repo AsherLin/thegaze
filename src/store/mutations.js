@@ -23,4 +23,17 @@ export default {
     // state.categories = Array.from(categories);
     Object.assign(state, { categories });
   },
+  m_updateMessage(state, payload) {
+    state.messages.push(payload);
+  },
+  m_removeMessage(state, payload) {
+    state.messages.splice(payload, 1);
+  },
+  m_removeMessageWithTiming(state, payload) {
+    state.messages.forEach((item, i) => {
+      if (item.timestamp === payload) {
+        state.messages.splice(i, 1);
+      }
+    });
+  },
 };

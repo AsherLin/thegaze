@@ -15,6 +15,7 @@ const store = new Vuex.Store({
     },
     allProducts: [],
     categories: [],
+    messages: [],
   },
   getters: {
     isLoading: (state) => state.isLoading,
@@ -22,6 +23,7 @@ const store = new Vuex.Store({
     cart: (state) => state.cart,
     allProducts: (state) => state.allProducts,
     categories: (state) => state.categories,
+    messages: (state) => state.messages,
   },
   actions,
   mutations,

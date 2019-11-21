@@ -1,7 +1,5 @@
 <template>
   <div class="bg-light pt-6">
-    <Alert />
-
     <!-- 標題區塊 -->
     <div class="container">
       <div class="row">
@@ -118,7 +116,7 @@
 </template>
 
 <script>
-import Alert from '@/components/AlertMessage';
+import { mapActions } from 'vuex';
 
 export default {
   data() {
@@ -131,6 +129,8 @@ export default {
   },
 
   methods: {
+    ...mapActions(['a_updateMessage']),
+
     getOrder() {
       const vm = this;
       const id = vm.$route.params.id;
@@ -149,9 +149,9 @@ export default {
         if (response.data.success) {
           // console.log(response);
           vm.getOrder();
-          vm.$bus.$emit('message:push', '已完成付款', 'primary');
+          this.$store.dispatch('a_updateMessage', { message: '已完成付款', status: 'primary' });
         } else {
-          vm.$bus.$emit('message:push', '付款未完成', 'danger');
+          this.$store.dispatch('a_updateMessage', { message: '付款未完成', status: 'danger' });
         }
       });
     },
@@ -159,9 +159,6 @@ export default {
   created() {
     const vm = this;
     vm.getOrder();
-  },
-  components: {
-    Alert,
   },
 };
 </script>

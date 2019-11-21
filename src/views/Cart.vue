@@ -1,7 +1,6 @@
 <template>
   <div class="bg-light pt-6">
     <loading :active.sync="isLoading" />
-    <Alert />
     <!-- 標題區塊 -->
     <div class="container">
       <div class="row">
@@ -117,7 +116,6 @@
 
 <script>
 import $ from 'jquery';
-import Alert from '@/components/AlertMessage';
 import { mapGetters } from 'vuex';
 
 export default {
@@ -132,7 +130,6 @@ export default {
     },
     delCart(id) {
       this.$store.dispatch('a_delCart', id);
-      this.$bus.$emit('message:push', '已從購物車刪除', 'danger');
     },
   },
   computed: {
@@ -146,9 +143,6 @@ export default {
   },
   created() {
     this.getCart();
-  },
-  components: {
-    Alert,
   },
 };
 </script>

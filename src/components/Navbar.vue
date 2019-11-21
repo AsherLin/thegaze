@@ -14,15 +14,20 @@
   </div>
 </template>
 <script>
+import { mapActions } from 'vuex';
+
 export default {
+  ...mapActions(['a_updateMessage']),
+
   methods: {
     signout() {
       const api = `${process.env.VUE_APP_API}/logout`;
       const vm = this;
       vm.$http.post(api).then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         // 如果回傳成功則重新導向至登入頁
         if (response.data.success) {
+          this.$store.dispatch('a_updateMessage', { message: '成功登出', status: 'primary' });
           vm.$router.push('/login');
         }
       });

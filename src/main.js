@@ -25,9 +25,6 @@ import router from './router';
 // Vuex
 import store from './store';
 
-// Eventbus
-import './bus';
-
 // Filters
 import currencyFilter from './filters/currency';
 import dateFilter from './filters/date';

@@ -159,6 +159,7 @@
 import $ from 'jquery';
 import moment from 'moment';
 import Pagination from '@/components/Pagination';
+import { mapActions } from 'vuex';
 
 export default {
   props: { config: Object },
@@ -189,6 +190,8 @@ export default {
   },
 
   methods: {
+    ...mapActions(['a_updateMessage']),
+
     onClickCreate() {},
 
     onClickEdit(id) {},
@@ -246,10 +249,11 @@ export default {
         if (response.data.sucess) {
           $('#couponModal').modal('hide');
           vm.getCoupons();
-          vm.$bus.$emit('message:push', '已更新 Coupon', 'success');
+          this.$store.dispatch('a_updateMessage', { message: '已更新優惠券', status: 'primary' });
         } else {
           $('#couponModal').modal('hide');
-          console.log('新增失敗');
+          // console.log('新增失敗');
+          this.$store.dispatch('a_updateMessage', { message: '更新失敗', status: 'danger' });
         }
         vm.products = response.data.products;
       });
@@ -265,7 +269,7 @@ export default {
         vm.isLoading = false;
         $('#delCouponModal').modal('hide');
         vm.getCoupons(); // 更新產品列表
-        vm.$bus.$emit('message:push', '成功刪除優惠券', 'danger');
+        this.$store.dispatch('a_updateMessage', { message: '成功刪除優惠券', status: 'primary' });
       });
     },
   },
