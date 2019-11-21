@@ -48,19 +48,16 @@
           </div>
         </div>
         <div class="col-md-2">
-          <p class="font-weight-bold">服務政策</p>
+          <p class="font-weight-bold">關於我們</p>
           <ul class="list-unstyled">
             <li>
-              <a href="#">關於我們</a>
+              <router-link to="/about">關於凝視</router-link>
             </li>
             <li>
-              <a href="#">退貨政策</a>
+              <router-link to="/privacy">服務條款</router-link>
             </li>
             <li>
-              <a href="#">服務條款</a>
-            </li>
-            <li>
-              <a href="#">訊息公告</a>
+              <router-link to="/return-policy">退貨政策</router-link>
             </li>
           </ul>
         </div>
@@ -78,12 +75,6 @@
               <a href="https://codepen.io/oliverlin-gaze">
                 <i class="fa fa-codepen text-center" aria-hidden="true"></i>
                 <span>CodePen</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/oliverlin.gaze">
-                <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                <span>Facebook</span>
               </a>
             </li>
             <li>

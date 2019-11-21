@@ -14,6 +14,8 @@ import Checkout from '../views/Checkout.vue';
 import Login from '../views/Login.vue';
 import Product from '../views/Product.vue';
 import Page404 from '../components/Page404.vue';
+import Privacy from '../views/Privacy.vue';
+import ReturnPolicy from '../views/ReturnPolicy.vue';
 
 // 自訂元件(後台)
 import Dashboard from '../views/Dashboard.vue';
@@ -41,6 +43,18 @@ const routes = [
     path: '/about',
     name: 'about',
     component: About,
+  },
+  // Privacy
+  {
+    path: '/privacy',
+    name: 'privacy',
+    component: Privacy,
+  },
+  // Return Policy
+  {
+    path: '/return-policy',
+    name: 'ReturnPolicy',
+    component: ReturnPolicy,
   },
   // Login
   {

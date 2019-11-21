@@ -34,8 +34,8 @@
             </li>
             <li class="nav-item">
               <router-link class="nav-link text-white" to="/cart">
-                <span>{{ cart.carts.length }}</span>
-                <i class="fa fa-book" aria-hidden="true"></i>
+                <span class="cartNum">{{ cart.carts.length }}</span>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               </router-link>
             </li>
             <li class="nav-item">
@@ -100,5 +100,11 @@ nav {
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+.cartNum {
+  display: inline-block;
+  min-width: 20px;
+  text-align: right;
+  margin-right: 4px;
 }
 </style>
