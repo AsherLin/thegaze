@@ -62,7 +62,7 @@
                     <h4>商品價格</h4>
                   </div>
                   <div class="mt-4">
-                    <ul class="pr-5">
+                    <ul class="pr-5 list-unstyled">
                       <li class="text-muted">
                         <strong>定價：</strong>
                         <del>
@@ -146,7 +146,7 @@
                     <h4>商品規格</h4>
                   </div>
                   <div class="mt-4">
-                    <ul>
+                    <ul class="list-unstyled">
                       <li>{{ product.description }}</li>
                     </ul>
                   </div>
