@@ -1,6 +1,6 @@
 <template>
   <div class="bg-light">
-    <div class="container py-4 py-md-6">
+    <div class="container py-6">
       <div class="row">
         <div class="col">
           <p>非常歡迎您光臨「The Gaze 凝視」（以下簡稱本網站），為了讓您能夠安心的使用本網站的各項服務與資訊，特此向您說明本網站的服務條款及隱私權保護政策，以保障您的權益，請您詳閱下列內容：</p>
@@ -37,10 +37,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {};
-</script>
-
-<style>
-</style>
