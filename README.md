@@ -22,7 +22,7 @@ npm run build
 
 ## Demo
 
-<https://thegaze77.github.io/thegaze/>
+<https://asherlin.github.io/thegaze/>
 
 ![The Gaze 凝視書店](https://i.imgur.com/gdqAODJ.jpg)
 
